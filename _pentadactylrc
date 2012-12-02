@@ -1,0 +1,30 @@
+"1.0rc1
+
+loadplugins '\.(js|penta)$'
+group user
+
+" vim: set ft=pentadactyl:
+
+set hintkeys=asdfg;lkjh
+
+nmap h :tabprevious <Cr>
+nmap l :tabnext <Cr>
+nmap <C-o> :back <Cr>
+nmap <C-i> :forward <Cr>
+
+nmap -b j 5j
+nmap -b k 5k
+
+
+" For snatchly bookmarklet
+bmark -keyword snatchly "javascript:void((function(){var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://snatchly-assets-uncompressed.s3.amazonaws.com/scripts/snatchly.bookmarklet.min.js?r='+Math.random()*99999999);document.body.appendChild(e)})());"
+
+" For getpocket bookmarklet
+bmark -keyword read "javascript:(function(){ISRIL_H='2011';PKT_D='getpocket.com';ISRIL_SCRIPT=document.createElement('SCRIPT');ISRIL_SCRIPT.type='text/javascript';ISRIL_SCRIPT.src='http://'+PKT_D+'/b/r.js';document.getElementsByTagName('head')[0].appendChild(ISRIL_SCRIPT)})();"
+
+nmap -ex gr :open read
+nmap -ex gs :open snatchly
+
+" pentadactyl fullscreen
+set nofullscreen
+set fullscreen
