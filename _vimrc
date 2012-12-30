@@ -85,7 +85,10 @@ let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 
 Bundle "groenewege/vim-less"
-
+Bundle "tsaleh/vim-matchit"
+Bundle "mattn/zencoding-vim"
+let g:user_zen_expandabbr_key = '<c-e>' 
+let g:use_zen_complete_tag = 1
 
 ""
 
@@ -96,8 +99,6 @@ filetype plugin indent on     " required!
 set tabstop=4
 
 set shiftwidth=4
-
-autocmd filetype python set expandtab
 
 set smarttab
 
@@ -124,6 +125,8 @@ set smartcase
 set backspace=2
 
 set autoindent
+
+set cindent
 
 set textwidth=79
 
@@ -157,13 +160,16 @@ map <c-h> <c-w>h
 map <c-l> <c-w>l
 
 set encoding=utf-8
-
 set fileformats=unix
 
 " set sensible defaults for different types of text files
-au FileType c set cindent tw=79
-au FileType sh set ai et sw=4 sts=4 noexpandtab
-au FileType vim set ai et sw=2 sts=2 noexpandtab
+au FileType c setlocal cindent tw=79
+au FileType sh setlocal ai et sw=4 sts=4 noexpandtab
+au FileType vim setlocal ai et sw=2 sts=2 noexpandtab
+au FileType html setlocal ai et sw=2 sts=2 noexpandtab
+au FileType css setlocal ai et sw=2 sts=2 noexpandtab
+au FileType javascript setlocal ai et sw=2 sts=2 expandtab
+au Filetype python setlocal expandtab
 
 set t_Co=256
 set laststatus=2
@@ -195,6 +201,9 @@ endif
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
-"
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc
+" wildignore settings
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,*.pyc
 set wildmenu 
+
+" flake8 ignore
+let g:syntastic_python_checker_args='--ignore=E128'
