@@ -207,3 +207,6 @@ set wildmenu
 
 " flake8 ignore
 let g:syntastic_python_checker_args='--ignore=E128'
+
+" Pastetoggle
+set pastetoggle=<F3>
