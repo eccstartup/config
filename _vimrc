@@ -163,13 +163,13 @@ set encoding=utf-8
 set fileformats=unix
 
 " set sensible defaults for different types of text files
-au FileType c setlocal cindent tw=79
-au FileType sh setlocal ai et sw=4 sts=4 noexpandtab
-au FileType vim setlocal ai et sw=2 sts=2 noexpandtab
-au FileType html setlocal ai et sw=2 sts=2 noexpandtab
-au FileType css setlocal ai et sw=2 sts=2 noexpandtab
-au FileType javascript setlocal ai et sw=2 sts=2 expandtab
-au Filetype python setlocal expandtab
+"au FileType c setlocal cindent tw=79
+"au FileType sh setlocal ai et sw=4 sts=4 noexpandtab
+"au FileType vim setlocal ai et sw=2 sts=2 noexpandtab
+"au FileType html setlocal ai et sw=2 sts=2 noexpandtab
+"au FileType css setlocal ai et sw=2 sts=2 noexpandtab
+"au FileType javascript setlocal ai et sw=2 sts=2 expandtab
+"au Filetype python setlocal expandtab
 
 set t_Co=256
 set laststatus=2
@@ -210,3 +210,5 @@ let g:syntastic_python_checker_args='--ignore=E128'
 
 " Pastetoggle
 set pastetoggle=<F3>
+
+Bundle "tpope/vim-sleuth"
