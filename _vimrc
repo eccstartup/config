@@ -212,3 +212,4 @@ let g:syntastic_python_checker_args='--ignore=E128'
 set pastetoggle=<F3>
 
 Bundle "tpope/vim-sleuth"
+Bundle "mkomitee/vim-gf-python"
