@@ -16,14 +16,18 @@ nmap -b j 5j
 nmap -b k 5k
 
 
-" For snatchly bookmarklet
+" snatchly bookmarklet
 bmark -keyword snatchly "javascript:void((function(){var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://snatchly-assets-uncompressed.s3.amazonaws.com/scripts/snatchly.bookmarklet.min.js?r='+Math.random()*99999999);document.body.appendChild(e)})());"
 
-" For getpocket bookmarklet
-bmark -keyword read "javascript:(function(){ISRIL_H='2011';PKT_D='getpocket.com';ISRIL_SCRIPT=document.createElement('SCRIPT');ISRIL_SCRIPT.type='text/javascript';ISRIL_SCRIPT.src='http://'+PKT_D+'/b/r.js';document.getElementsByTagName('head')[0].appendChild(ISRIL_SCRIPT)})();"
+" getpocket bookmarklet
+bmark -keyword pocket "javascript:(function(){ISRIL_H='2011';PKT_D='getpocket.com';ISRIL_SCRIPT=document.createElement('SCRIPT');ISRIL_SCRIPT.type='text/javascript';ISRIL_SCRIPT.src='http://'+PKT_D+'/b/r.js';document.getElementsByTagName('head')[0].appendChild(ISRIL_SCRIPT)})();"
 
-nmap -ex gr :open read
+" viewport resizer
+bmark -keyword resizer "javascript:void((function(d){if(self!=top||d.getElementById('toolbar')&&d.getElementById('toolbar').getAttribute('data-resizer'))return%20false;d.write('<!DOCTYPE%20HTML><html%20style=%22opacity:0;%22><head><meta%20charset=%22utf-8%22/></head><body><a%20data-viewport=%22320x480%22%20data-icon=%22mobile%22>Mobile%20(e.g.%20Apple%20iPhone)</a><a%20data-viewport=%22320x568%22%20data-icon=%22mobile%22%20data-version=%225%22>Apple%20iPhone%205</a><a%20data-viewport=%22600x800%22%20data-icon=%22small-tablet%22>Small%20Tablet</a><a%20data-viewport=%22768x1024%22%20data-icon=%22tablet%22>Tablet%20(e.g.%20Apple%20iPad%202-3rd,%20mini)</a><a%20data-viewport=%221280x800%22%20data-icon=%22notebook%22>Widescreen</a><script%20src=%22http://lab.maltewassermann.com/viewport-resizer/resizer.min.js%22></script></body></html>')})(document));"
+
+nmap -ex gp :open pocket 
 nmap -ex gs :open snatchly
+nmap -ex gr :open resizer
 
 " pentadactyl fullscreen
 set nofullscreen
