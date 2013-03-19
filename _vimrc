@@ -142,6 +142,10 @@ set foldmethod=indent
 
 set foldlevel=99
 
+" treat _ as word boundary, closer to python code style
+
+set iskeyword-=_
+
 " auto fresh when a file has been modified
 
 set autoread
@@ -206,7 +210,7 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 set wildmenu 
 
 " flake8 ignore
-let g:syntastic_python_checker_args='--ignore=E128'
+" let g:syntastic_python_checker_args='--ignore=E128'
 
 " Pastetoggle
 set pastetoggle=<F3>
