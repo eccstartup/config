@@ -58,9 +58,6 @@ Bundle "sjl/gundo.vim"
 nmap <F7> :GundoToggle<CR>
 
 Bundle "ervandew/supertab"
-"au FileType python set omnifunc=pythoncomplete#Complete
-"let g:SuperTabDefaultCompletionType = "context"
-"set completeopt=menuone,longest,preview
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -90,7 +87,8 @@ Bundle "mattn/zencoding-vim"
 let g:user_zen_expandabbr_key = '<c-e>' 
 let g:use_zen_complete_tag = 1
 Bundle "vim-stylus"
-""
+Bundle "tpope/vim-sleuth"
+Bundle "mkomitee/vim-gf-python"
 
 filetype plugin indent on     " required!
 
@@ -101,8 +99,6 @@ set tabstop=4
 set shiftwidth=4
 
 set smarttab
-
-" show line number
 
 set number
 
@@ -136,8 +132,6 @@ set ruler
 
 set background=dark
 
-"set mouse=a
-
 set foldmethod=indent
 
 set foldlevel=99
@@ -154,7 +148,6 @@ syntax on
 
 set guifont=Monaco\ for\ Powerline:h12
 
-" no swapfile
 set noswapfile
 
 " maps windows move
@@ -166,15 +159,6 @@ map <c-l> <c-w>l
 set encoding=utf-8
 set fileformats=unix
 
-" set sensible defaults for different types of text files
-"au FileType c setlocal cindent tw=79
-"au FileType sh setlocal ai et sw=4 sts=4 noexpandtab
-"au FileType vim setlocal ai et sw=2 sts=2 noexpandtab
-"au FileType html setlocal ai et sw=2 sts=2 noexpandtab
-"au FileType css setlocal ai et sw=2 sts=2 noexpandtab
-"au FileType javascript setlocal ai et sw=2 sts=2 expandtab
-"au Filetype python setlocal expandtab
-
 set t_Co=256
 set laststatus=2
 
@@ -185,6 +169,7 @@ set makeprg=gcc\ -o\ %<\ %
 if $CSCOPE_DB != ""
   cs add $CSCOPE_DB
 endif
+
 nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
@@ -209,11 +194,5 @@ vnoremap <Space> zf
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,*.pyc
 set wildmenu 
 
-" flake8 ignore
-" let g:syntastic_python_checker_args='--ignore=E128'
-
 " Pastetoggle
 set pastetoggle=<F3>
-
-Bundle "tpope/vim-sleuth"
-Bundle "mkomitee/vim-gf-python"
