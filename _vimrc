@@ -138,7 +138,7 @@ set foldlevel=99
 
 " treat _ as word boundary, closer to python code style
 
-set iskeyword-=_
+" set iskeyword-=_
 
 " auto fresh when a file has been modified
 
